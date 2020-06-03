@@ -8,9 +8,6 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 bot = commands.Bot(command_prefix='js ')
 
-global general_id
-general_id = bot.get_channel(716983938995716202)
-
 
 @bot.event
 async def on_ready():
@@ -19,8 +16,7 @@ async def on_ready():
 
 @bot.command()
 async def sendPic(ctx):
-    pic = discord.File('X:\github\jing-si-bot\pics\wo.png')
-    await ctx.send(file=pic)
+    pass
 
 
 bot.run(TOKEN)
