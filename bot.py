@@ -5,7 +5,7 @@ import asyncio  # multithread的模組
 from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')  # 設定成跟.env裡一樣的字
-bot = commands.Bot(command_prefix='js ')  # 這裡設定prefix
+bot = commands.Bot(command_prefix='ns ')  # 這裡設定prefix
 
 
 def add(x, y):  # 2+2
