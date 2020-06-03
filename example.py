@@ -85,7 +85,7 @@ async def me(ctx):
     await ctx.send(f'第三種方法只會顯示帳號{user.display_name}')
 
 
-@bot.command()
+@bot.command()  # 讓BOT找你DM
 async def DMme(ctx):
     user = ctx.author
     await user.create_dm()
