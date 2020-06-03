@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix='js ')
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 motto_lib = os.path.join(PROJECT_ROOT, 'motto.json')
 
-with open('motto.json', 'r', encoding='utf8') as read_motto:
+with open(motto_lib, 'r', encoding='utf8') as read_motto:
     jMotto = json.load(read_motto)
 
 
@@ -25,11 +25,10 @@ async def on_ready():
 @bot.event
 async def on_message(msg):
     trigger = ['e04', '幹', '幹你娘', '牙控灰機']
-    random_reply = random.choice(jMotto['MOTTO'])
-    motto = discord.File(random_reply)
+    random_motto = random.choice(jMotto['MOTTO'])
 
     if msg.content in trigger:
-        await msg.channel.send(motto)
+        await msg.channel.send(random_motto)
 
 
 @bot.command()
