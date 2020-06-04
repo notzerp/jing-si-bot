@@ -20,6 +20,9 @@ with open(motto_lib, 'r', encoding='utf8') as read_motto:
 
 @bot.event
 async def on_ready():
+    # bot的狀態 now playing正在玩XXX
+    await bot.change_presence(status=discord.Status.online,
+                              activity=discord.Game('散播感恩與愛'))
     print(bot.user.name, 'has connected to the server.')
 
 
