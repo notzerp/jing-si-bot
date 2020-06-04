@@ -13,6 +13,7 @@ bot = commands.Bot(command_prefix='js ')
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 motto_lib = os.path.join(PROJECT_ROOT, 'motto.json')
 
+# 資料庫從這邊讀進去
 with open(motto_lib, 'r', encoding='utf8') as read_motto:
     jMotto = json.load(read_motto)
 
@@ -24,7 +25,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(msg):
-    trigger = ['e04', '幹', '幹你娘', '牙控灰機']
+    trigger = ['e04', '幹', '幹你娘']
     random_motto = random.choice(jMotto['MOTTO'])
 
     if msg.content in trigger:
