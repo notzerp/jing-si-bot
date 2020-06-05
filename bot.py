@@ -1,17 +1,19 @@
 import os
 import discord
 from discord.ext import commands
-import asyncio
+# import asyncio
 import json
 import random
 from dotenv import load_dotenv
 
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-bot = commands.Bot(command_prefix='js ')
-
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 motto_lib = os.path.join(PROJECT_ROOT, 'motto.json')
+
+env_path = os.path.join(PROJECT_ROOT, '.env')
+load_dotenv(dotenv_path=env_path, override=True)
+TOKEN = os.getenv('DISCORD_TOKEN')
+
+bot = commands.Bot(command_prefix='js ')
 
 # 資料庫從這邊讀進去
 with open(motto_lib, 'r', encoding='utf8') as read_motto:
