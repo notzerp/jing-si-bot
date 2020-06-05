@@ -34,7 +34,8 @@ async def on_message(msg):
 
     if msg.content in trigger:
         await msg.channel.send(random_motto)
-
+    if (msg.content.startswith('js ')):
+        await bot.process_commands(msg)
 
 @bot.command()
 async def sendPic(ctx):
