@@ -1,7 +1,6 @@
 import os
 import discord
 from discord.ext import commands
-# import asyncio
 import json
 import random
 from dotenv import load_dotenv
